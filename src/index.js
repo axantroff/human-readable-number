@@ -42,13 +42,13 @@ module.exports = function toReadable(number) {
     }
 
     if (number < 100) {
-        return `${tableNumbers[decades * 10]} ${tableNumbers[digits]}`.trim()
+        return `${tableNumbers[decades * 10]} ${tableNumbers[digits]}`.trim().replace('  ', ' ');
     }
 
     if ((decades * 10) < 20) {
-        return `${tableNumbers[hundreds]} hundred ${tableNumbers[(decades * 10) + digits]}`.trim()
+        return `${tableNumbers[hundreds]} hundred ${tableNumbers[(decades * 10) + digits]}`.trim().replace('  ', ' ');
     }
 
-    return `${tableNumbers[hundreds]} hundred ${tableNumbers[decades * 10]} ${tableNumbers[digits]}`.trim()
+    return `${tableNumbers[hundreds]} hundred ${tableNumbers[decades * 10]} ${tableNumbers[digits]}`.trim().replace('  ', ' ');
 
 };
